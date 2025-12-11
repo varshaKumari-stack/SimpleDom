@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+main {
+  width: 100vw;
+  height: 100vh;
+  background-color: #4b1a44;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  button {
+    padding: 1rem 4rem;
+    font-size: 3rem;
+    -webkit-text-stroke: 2px #4b1a44;
+    color: transparent;
+    background-color: aqua;
+    border: 1px solid #000;
+    outline: none;
+    border-radius: 1rem;
+    &:hover {
+      scale: 1.2;
+      border-radius: 5rem;
+      border: 1px solid #000;
+    }
+  }
+}
