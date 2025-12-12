@@ -1,0 +1,102 @@
+@font-face {
+  font-family: clock;
+  src: url("./fonts/NewRocker-Regular.ttf");
+}
+@font-face {
+  font-family: span;
+  src: url("./fonts/Wooden Log.ttf");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(45deg, #08001f, #30197d);
+  color: #fff;
+  position: relative;
+}
+main h1 {
+  text-align: center;
+  padding: 1rem;
+  font-size: 6rem;
+  font-family: clock;
+  -webkit-text-stroke: 1px #c36e0c;
+  color: transparent;
+}
+main .container {
+  width: 700px;
+  height: 180px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: span;
+}
+main .container::before {
+  content: "";
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  border-radius: 5px;
+  background-color: #295656;
+  left: -50px;
+  top: -50px;
+  z-index: -1;
+}
+main .container::after {
+  content: "";
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background-color: #c20a72;
+  right: -50px;
+  bottom: -50px;
+  z-index: -1;
+}
+main .container .clock {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(235, 0, 255, 0.11);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  -webkit-backdrop-filter: blur(40px);
+          backdrop-filter: blur(40px);
+}
+main .container .clock span {
+  font-size: 60px;
+  width: 160px;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  color: aqua;
+}
+main .container .clock span::after {
+  font-size: 20px;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+main .container .clock #hrs::after {
+  content: "Hours";
+}
+main .container .clock #sec::after {
+  content: "Second";
+}
+main .container .clock #min::after {
+  content: "Minute";
+}/*# sourceMappingURL=style.css.map */
