@@ -1,0 +1,117 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #a4b6c5;
+}
+.clock {
+  position: relative;
+  width: 400px;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #c5c3c4;
+  border-radius: 50px;
+  border-top-left-radius: 250px;
+  border-top-right-radius: 250px;
+  box-shadow: 45px 45px 45px -15px rgba(0, 0, 0, 0.15),
+    inset 15px 15px 10px rgba(255, 255, 255, 0.75),
+    -15px -15px 35px rgba(255, 255, 255, 0.55),
+    inset -2px -2px 15px rgba(0, 0, 0, 0.2);
+}
+
+.numbers {
+  position: absolute;
+  top: 40px;
+  width: 320px;
+  height: 320px;
+  background: #0f2f3b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  box-shadow: 7px 7px 22px #152b4a66,
+    inset 7px 7px 7px rgba(255, 255, 255, 0.55),
+    -9px -9px 15px rgba(255, 255, 255, 1);
+}
+.numbers::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  z-index: 100;
+  box-shadow: 0 0 0 1px #e91e63, 0 0 0 3px #fff, 0 0 5px 5px rgba(0, 0, 0, 0.15);
+  background: #e91e63;
+}
+.numbers span {
+  position: absolute;
+  inset: 15px;
+  text-align: center;
+  color: #fff;
+  font-size: 1.2em;
+  transform: rotate(calc(30deg * var(--i)));
+}
+.numbers span b {
+  font-weight: 400;
+  display: inline-block;
+  transform: rotate(calc(-30deg * var(--i)));
+}
+.numbers .circle {
+  position: absolute;
+  width: 230px;
+  height: 230px;
+  border: 1px solid rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 10;
+  border-radius: 50%;
+}
+.numbers .circle i {
+  position: absolute;
+  width: 6px;
+  height: 50%;
+  background: var(--clr);
+  opacity: 0.75;
+  transform-origin: bottom;
+  transform: scaleY(0.5);
+}
+.numbers .circle#sec i {
+  width: 2px;
+}
+.numbers .circle#min i {
+  width: 4px;
+}
+.numbers .circle#min {
+  width: 200px;
+  height: 200px;
+}
+.numbers .circle#hrs {
+  width: 170px;
+  height: 170px;
+}
+.numbers .circle::before {
+  content: "";
+  position: absolute;
+  height: 8px;
+  width: 8px;
+  top: -6px;
+  left: 50%;
+  background: var(--clr);
+  border-radius: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 20px var(--clr), 0 0 60px var(--clr);
+}
